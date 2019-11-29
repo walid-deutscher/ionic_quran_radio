@@ -1,0 +1,79 @@
+<div class="dz">
+<div style="height: 17%;">
+
+</div>
+  
+ <div  text-center class="head">
+  <span text-center style=" vertical-align: middle"> 
+          
+          
+اذاعة القران الكريم    
+    
+   </span>
+
+
+ </div>
+ <div style="height: 10%;">
+
+</div>
+
+    <div text-center class="sound">
+         
+        <span text-center style="    vertical-align: middle"> 
+      
+          <select text-center  (change)="play()"  style="margin-top:5px;" [(ngModel)]="cuurenttilte">
+            <option  text-center style=" vertical-align: middle ;float: right;  background: transparent !important; width: 100%;"  *ngFor="let soura of data" value="{{soura.index}}"  > {{soura.name}} </option>
+       
+           
+          </select>
+          أختر السورة
+         </span>
+    
+      
+    
+
+      
+    </div>
+    <div style="height: 10%;">
+
+    </div>
+    
+ 
+    <div text-center  class="img"></div>
+ 
+    <div  text-center class="title">
+
+      <span text-center style=" vertical-align: middle"> 
+          
+    رقم السورة: {{cuurenttilte}}
+        
+       </span>
+      
+    </div>
+    <br style="clear: both;">
+    <div text-center>
+  <br>
+<img  height="40" style="  margin-right: 10%!important;"  src="/assets/img/share_button.png" > 
+<img   (click)="play()" *ngIf="test" height="80" style="  margin: auto !important;" src="/assets/img/play_button.png" > 
+<img    (click)="pause()" *ngIf="test2" height="80" style="  margin: auto !important;" src="/assets/img/stop_button.png" > 
+<img     class="grow" *ngIf="test1" height="80" style="  margin: auto !important;" src="/assets/img/searching_button.png" > 
+
+
+<img   height="40"style="   margin-left: 10%!important;" src="/assets/img/internet_explorer.png" > 
+</div>
+ 
+ 
+</div>
+ 
+
+<audio id="myAudio">
+     <source src="/assets/1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+
+
+  <audio  style="display: none;"*ngIf="test2" controls autoplay>
+    <source [src]="curmp3" type="audio/ogg">
+   Your browser does not support the audio element.
+  </audio>
