@@ -12,4 +12,4 @@
 
 ###image of Application :
 
-![Koran radio]( <img src="https://raw.githubusercontent.com/walid-deutscher/ionic_quran_radio/master/app_imag.png" height="500" width="200" />)
+![Koran radio](https://raw.githubusercontent.com/walid-deutscher/ionic_quran_radio/master/app_imag.png =500*200)
