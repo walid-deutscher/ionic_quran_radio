@@ -76,7 +76,7 @@ data:{} ;
 
 
   showPauselogot(){
-    this.quran.isStopped=false;
+    this.quran.isStopped=true;
     this.quran.isplaying=false;
     this.quran.iswaiting=false;
   }
