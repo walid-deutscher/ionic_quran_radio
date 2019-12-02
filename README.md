@@ -12,7 +12,7 @@
 
 ###image of Application :
 
-![Koran radio](https://raw.githubusercontent.com/walid-deutscher/ionic_quran_radio/master/app2.png)
+![Koran radio](https://raw.githubusercontent.com/walid-deutscher/ionic_quran_radio/master/screenshoot.png)
 
 ## ionic serve
 
