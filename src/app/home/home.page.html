@@ -21,7 +21,7 @@
          
         <span text-center style="    vertical-align: middle"> 
       
-          <select text-center  (change)="play()"  style="margin-top:5px;" [(ngModel)]="cuurenttilte">
+          <select text-center  (change)="play()"  style="margin-top:5px;" [(ngModel)]="quran.title">
             <option  text-center style=" vertical-align: middle ;float: right;  background: transparent !important; width: 100%;"  *ngFor="let soura of data" value="{{soura.index}}"  > {{soura.name}} </option>
        
            
@@ -45,7 +45,7 @@
 
       <span text-center style=" vertical-align: middle"> 
           
-    رقم السورة: {{cuurenttilte}}
+    رقم السورة: {{quran.title}}
         
        </span>
       
@@ -53,27 +53,30 @@
     <br style="clear: both;">
     <div text-center>
   <br>
+  <span  *ngIf="quran.isplaying" class="time">
+ 
+    {{
+      quran.currentTime  
+      }}
+    </span>
 <img  height="40" style="  margin-right: 10%!important;"  src="/assets/img/share_button.png" > 
-<img   (click)="play()" *ngIf="test" height="80" style="  margin: auto !important;" src="/assets/img/play_button.png" > 
-<img    (click)="pause()" *ngIf="test2" height="80" style="  margin: auto !important;" src="/assets/img/stop_button.png" > 
-<img     class="grow" *ngIf="test1" height="80" style="  margin: auto !important;" src="/assets/img/searching_button.png" > 
+<img  *ngIf="quran.isStopped" height="80" style="  margin: auto !important;" src="/assets/img/play_button.png" > 
+<img     *ngIf="quran.isplaying" height="80" style="  margin: auto !important;" src="/assets/img/stop_button.png" > 
+<img     class="grow" *ngIf="quran.iswaiting" height="80" style="  margin: auto !important;" src="/assets/img/searching_button.png" > 
 
 
 <img   height="40"style="   margin-left: 10%!important;" src="/assets/img/internet_explorer.png" > 
-</div>
- 
- 
-</div>
- 
 
-<audio id="myAudio">
-     <source src="/assets/1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+<span  *ngIf="quran.isplaying" class="time">
+ 
+  {{
+  quran.duration
+     }}
+  </span>
+
+</div>
+ 
+<ion-progress-bar   *ngIf="quran.isplaying"  type="indeterminate"  color="success"></ion-progress-bar>
   
-
-
-  <audio  style="display: none;"*ngIf="test2" controls autoplay>
-    <source [src]="curmp3" type="audio/ogg">
-   Your browser does not support the audio element.
-  </audio>
+</div>
+ 
